@@ -1,0 +1,1160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="doggo_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="4.0137E-07 -5.4265E-09 -0.0050974"
+        rpy="0 0 0" />
+      <mass
+        value="1.6553" />
+      <inertia
+        ixx="0.0019798"
+        ixy="-4.1121E-08"
+        ixz="-3.9928E-09"
+        iyy="0.0014157"
+        iyz="-4.2669E-10"
+        izz="0.001756" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="frame">
+    <inertial>
+      <origin
+        xyz="-0.098956 0.012762 -0.17499"
+        rpy="0 0 0" />
+      <mass
+        value="0.44543" />
+      <inertia
+        ixx="0.004949"
+        ixy="-1.5499E-05"
+        ixz="2.3781E-15"
+        iyy="0.0046541"
+        iyz="-1.2495E-16"
+        izz="0.00060534" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/frame.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/frame.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_frame"
+    type="fixed">
+    <origin
+      xyz="-0.174999999999967 -0.0992757156092079 -0.0118897657684994"
+      rpy="1.57079632679489 -0.0523598775598229 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="frame" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="leg11">
+    <inertial>
+      <origin
+        xyz="0.00473641153079969 -0.0400546917663641 -0.000402773248607047"
+        rpy="0 0 0" />
+      <mass
+        value="0.0177492811466513" />
+      <inertia
+        ixx="2.26666365128031E-05"
+        ixy="-7.05482831182034E-13"
+        ixz="-2.10434595791076E-13"
+        iyy="8.22376388767111E-07"
+        iyz="2.84555978380763E-07"
+        izz="2.21159117116047E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg11.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frame_leg11"
+    type="continuous">
+    <origin
+      xyz="-0.219712353732748 0.0126440812806081 -0.35"
+      rpy="1.57079632679489 0 3.03687289847014" />
+    <parent
+      link="frame" />
+    <child
+      link="leg11" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg13">
+    <inertial>
+      <origin
+        xyz="-0.0047885894733085 -0.0778812653760268 5.27355936696949E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0249183575640696" />
+      <inertia
+        ixx="8.50714680974236E-05"
+        ixy="-5.24101636113598E-21"
+        ixz="-8.470329472543E-22"
+        iyy="1.15093364635689E-06"
+        iyz="-1.98981398276928E-20"
+        izz="8.42973233783957E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg13.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg13.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg11_leg13"
+    type="continuous">
+    <origin
+      xyz="0 -0.09 0"
+      rpy="2.18846006023504 0 0" />
+    <parent
+      link="leg11" />
+    <child
+      link="leg13" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg12">
+    <inertial>
+      <origin
+        xyz="-0.00478858450409037 -0.0250709741997628 -0.000508253782198557"
+        rpy="0 0 0" />
+      <mass
+        value="0.0248452488629152" />
+      <inertia
+        ixx="3.18814346047358E-05"
+        ixy="-4.21856160922778E-12"
+        ixz="2.28295592667529E-14"
+        iyy="1.87736029511954E-06"
+        iyz="-4.60366749634874E-08"
+        izz="3.03827516292619E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frame_leg12"
+    type="continuous">
+    <origin
+      xyz="-0.219712353732748 0.012644081280608 -0.34"
+      rpy="-1.51465572998769 0 3.03687289847014" />
+    <parent
+      link="frame" />
+    <child
+      link="leg12" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg14">
+    <inertial>
+      <origin
+        xyz="0.00473641052669149 -0.0857929956840353 3.25017790459015E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.0302066230898901" />
+      <inertia
+        ixx="0.000123370358212557"
+        ixy="1.29304873354289E-20"
+        ixz="6.35274710440725E-22"
+        iyy="1.01593562451106E-06"
+        iyz="-6.19368259905878E-17"
+        izz="0.000122811175047875" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg14.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg14.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg12_leg14"
+    type="continuous">
+    <origin
+      xyz="0 -0.0800157546944706 -0.000561111111111217"
+      rpy="-2.18846006023503 0 0" />
+    <parent
+      link="leg12" />
+    <child
+      link="leg14" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="shoe1">
+    <inertial>
+      <origin
+        xyz="0.00526347046647044 -0.179876460917477 -3.47847804865742E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0067619489677717" />
+      <inertia
+        ixx="2.89934238268779E-07"
+        ixy="-4.53173826351264E-12"
+        ixz="1.11948400149251E-11"
+        iyy="3.09327713491595E-07"
+        iyz="1.02889131421492E-11"
+        izz="2.89371081098196E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/shoe1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/shoe1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg14_shoe1"
+    type="fixed">
+    <origin
+      xyz="0.01 0 0"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="leg14" />
+    <child
+      link="shoe1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="leg21">
+    <inertial>
+      <origin
+        xyz="0.00473641523493279 -0.0350552092175932 5.28600552103476E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0248452593322982" />
+      <inertia
+        ixx="3.18814417563457E-05"
+        ixy="-4.03765604646941E-12"
+        ixz="5.00275704685331E-14"
+        iyy="1.87736032635851E-06"
+        iyz="-4.60381023078403E-08"
+        izz="3.03827587093249E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg21.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg21.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frame_leg21"
+    type="continuous">
+    <origin
+      xyz="-0.210239532679365 0.0116484476679836 0"
+      rpy="1.51465572998769 0 3.03687289847014" />
+    <parent
+      link="frame" />
+    <child
+      link="leg21" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg23">
+    <inertial>
+      <origin
+        xyz="0.0047365130400379 -0.0857929956840341 3.4180991370647E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.0302066230898895" />
+      <inertia
+        ixx="0.000123370358212556"
+        ixy="-2.27305923607122E-19"
+        ixz="0"
+        iyy="1.01593562451131E-06"
+        iyz="-6.34294052669368E-17"
+        izz="0.000122811175047873" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg23.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg23.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg21_leg23"
+    type="continuous">
+    <origin
+      xyz="0.0095248974866534 -0.09 0"
+      rpy="2.18846006023503 0 0" />
+    <parent
+      link="leg21" />
+    <child
+      link="leg23" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="shoe2">
+    <inertial>
+      <origin
+        xyz="0.00526334634534026 -0.179876470411932 -4.73843669024365E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00676194704431705" />
+      <inertia
+        ixx="2.89933725898764E-07"
+        ixy="-3.59739076728077E-12"
+        ixz="1.13806903467384E-11"
+        iyy="3.09327965440927E-07"
+        iyz="1.13005668961044E-11"
+        izz="2.89371624270925E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/shoe2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/shoe2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg23_shoe2"
+    type="fixed">
+    <origin
+      xyz="0.01 0 0"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="leg23" />
+    <child
+      link="shoe2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="leg22">
+    <inertial>
+      <origin
+        xyz="0.00426141153079966 -0.0400546917663641 -0.0004027732486068"
+        rpy="0 0 0" />
+      <mass
+        value="0.0177492811466513" />
+      <inertia
+        ixx="2.26666365128031E-05"
+        ixy="-7.05482824567954E-13"
+        ixz="-2.10434599496845E-13"
+        iyy="8.22376388767116E-07"
+        iyz="2.8455597838094E-07"
+        izz="2.21159117116047E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg22.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frame_leg22"
+    type="continuous">
+    <origin
+      xyz="-0.220184751633048 0.01269373230066 0"
+      rpy="-1.5707963267949 0 3.03687289847014" />
+    <parent
+      link="frame" />
+    <child
+      link="leg22" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg24">
+    <inertial>
+      <origin
+        xyz="-0.00526358947330857 -0.0778812653760269 5.27355936696949E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0249183575640697" />
+      <inertia
+        ixx="8.50714680974238E-05"
+        ixy="-3.11052997544441E-20"
+        ixz="-1.90582413132218E-21"
+        iyy="1.15093364635692E-06"
+        iyz="-2.22540536098204E-20"
+        izz="8.42973233783957E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg24.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg24.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg22_leg24"
+    type="continuous">
+    <origin
+      xyz="0 -0.09 0"
+      rpy="-2.18846006023503 0 0" />
+    <parent
+      link="leg22" />
+    <child
+      link="leg24" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg31">
+    <inertial>
+      <origin
+        xyz="0.00676250496921826 -0.0350552195052921 5.28573289125152E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0248452488629152" />
+      <inertia
+        ixx="3.18814346047358E-05"
+        ixy="-4.21856161706842E-12"
+        ixz="2.28295600079067E-14"
+        iyy="1.87736029511954E-06"
+        iyz="-4.60366749635035E-08"
+        izz="3.0382751629262E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg31.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg31.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frame_leg31"
+    type="continuous">
+    <origin
+      xyz="0.01 0 0"
+      rpy="1.6269369236021 0 0" />
+    <parent
+      link="frame" />
+    <child
+      link="leg31" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg33">
+    <inertial>
+      <origin
+        xyz="0.0137813538834254 -0.0857929956840353 3.2460145682478E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.0302066230898901" />
+      <inertia
+        ixx="0.000123370358212557"
+        ixy="-1.34317587866361E-19"
+        ixz="-1.27054942088145E-21"
+        iyy="1.01593562451106E-06"
+        iyz="-6.19601779196656E-17"
+        izz="0.000122811175047875" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg33.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg33.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg31_leg33"
+    type="continuous">
+    <origin
+      xyz="0.00250614611657457 -0.0899999999999999 0"
+      rpy="-2.18846006023503 0 0" />
+    <parent
+      link="leg31" />
+    <child
+      link="leg33" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="shoe3">
+    <inertial>
+      <origin
+        xyz="0.00378120255404579 -0.179876453100306 -6.02841195157522E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00676194246801817" />
+      <inertia
+        ixx="2.89933378234274E-07"
+        ixy="-3.40400314738815E-12"
+        ixz="1.07934692580414E-11"
+        iyy="3.09327744880635E-07"
+        iyz="1.15463175981782E-11"
+        izz="2.89371750215061E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/shoe3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/shoe3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg33_shoe3"
+    type="fixed">
+    <origin
+      xyz="0.01 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg33" />
+    <child
+      link="shoe3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="leg32">
+    <inertial>
+      <origin
+        xyz="0.00613230165905557 -0.0400546917663641 -0.000402773248606731"
+        rpy="0 0 0" />
+      <mass
+        value="0.0177492811466513" />
+      <inertia
+        ixx="2.26666365128031E-05"
+        ixy="-7.05482818903421E-13"
+        ixz="-2.10434597485142E-13"
+        iyy="8.22376388767114E-07"
+        iyz="2.84555978380928E-07"
+        izz="2.21159117116047E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg32.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg32.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frame_leg32"
+    type="continuous">
+    <origin
+      xyz="0.0201551993450529 0 0"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="frame" />
+    <child
+      link="leg32" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg34">
+    <inertial>
+      <origin
+        xyz="-0.00339269934505262 -0.0778812653760269 3.33066907387547E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0249183575640697" />
+      <inertia
+        ixx="8.50714680974238E-05"
+        ixy="1.81043366308256E-19"
+        ixz="-1.6940658945086E-21"
+        iyy="1.15093364635692E-06"
+        iyz="-2.21036721744582E-19"
+        izz="8.42973233783958E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg34.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg34.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg32_leg34"
+    type="continuous">
+    <origin
+      xyz="0 -0.0899999999999999 0"
+      rpy="2.18846006023503 0 0" />
+    <parent
+      link="leg32" />
+    <child
+      link="leg34" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg41">
+    <inertial>
+      <origin
+        xyz="0.00575552140515104 -0.0400546917663641 -0.00040277324860696"
+        rpy="0 0 0" />
+      <mass
+        value="0.0177492811466514" />
+      <inertia
+        ixx="2.26666365128032E-05"
+        ixy="-7.05482824045324E-13"
+        ixz="-2.10434598332175E-13"
+        iyy="8.22376388767114E-07"
+        iyz="2.84555978380827E-07"
+        izz="2.21159117116048E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg41.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg41.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frame_leg41"
+    type="continuous">
+    <origin
+      xyz="0.020531979598957 0 -0.35"
+      rpy="1.57079632679489 0 0" />
+    <parent
+      link="frame" />
+    <child
+      link="leg41" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg43">
+    <inertial>
+      <origin
+        xyz="-0.00376947959895713 -0.0778812653760269 2.77555756156289E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0249183575640696" />
+      <inertia
+        ixx="8.50714680974237E-05"
+        ixy="1.00641410768102E-19"
+        ixz="4.2351647362715E-22"
+        iyy="1.15093364635691E-06"
+        iyz="-2.41944849100202E-19"
+        izz="8.42973233783958E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg43.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg43.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg41_leg43"
+    type="continuous">
+    <origin
+      xyz="0 -0.09 0"
+      rpy="-2.18846006023503 0 0" />
+    <parent
+      link="leg41" />
+    <child
+      link="leg43" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg42">
+    <inertial>
+      <origin
+        xyz="0.00660730536318853 -0.0350552092175932 5.2860055210365E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0248452593322981" />
+      <inertia
+        ixx="3.18814417563456E-05"
+        ixy="-4.03765606066135E-12"
+        ixz="5.0027568562709E-14"
+        iyy="1.8773603263585E-06"
+        iyz="-4.60381023078596E-08"
+        izz="3.03827587093249E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg42.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg42.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frame_leg42"
+    type="continuous">
+    <origin
+      xyz="0.0101551993450526 0 -0.35"
+      rpy="-1.6269369236021 0 0" />
+    <parent
+      link="frame" />
+    <child
+      link="leg42" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg44">
+    <inertial>
+      <origin
+        xyz="0.0137813538834251 -0.0857929956840341 3.41254802194157E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.0302066230898895" />
+      <inertia
+        ixx="0.000123370358212556"
+        ixy="-4.39858253808748E-19"
+        ixz="1.6940658945086E-21"
+        iyy="1.01593562451133E-06"
+        iyz="-6.34940714554916E-17"
+        izz="0.000122811175047873" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg44.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/leg44.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg42_leg44"
+    type="continuous">
+    <origin
+      xyz="0.00235094677152173 -0.09 0"
+      rpy="2.18846006023503 0 0" />
+    <parent
+      link="leg42" />
+    <child
+      link="leg44" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="shoe4">
+    <inertial>
+      <origin
+        xyz="0.00378122419555416 -0.179876443426376 -4.78241996282325E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00676194448321673" />
+      <inertia
+        ixx="2.89933872075379E-07"
+        ixy="-4.3343838597577E-12"
+        ixz="1.06267003306052E-11"
+        iyy="3.09327434428408E-07"
+        iyz="1.05191066462915E-11"
+        izz="2.89371183528626E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/shoe4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://doggo_description/meshes/shoe4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg44_shoe4"
+    type="fixed">
+    <origin
+      xyz="0.01 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg44" />
+    <child
+      link="shoe4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

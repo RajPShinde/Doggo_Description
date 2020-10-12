@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'frame_leg11', 'leg11_leg13', 'frame_leg12', 'leg12_leg14', 'frame_leg21', 'leg21_leg23', 'frame_leg22', 'leg22_leg24', 'frame_leg31', 'leg31_leg33', 'frame_leg32', 'leg32_leg34', 'frame_leg41', 'leg41_leg43', 'frame_leg42', 'leg42_leg44', ]
