@@ -1,0 +1,87 @@
+doggo_description:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100  
+  
+  # Position Controllers ---------------------------------------
+  leg_controller1:
+    type: effort_controllers/JointPositionController
+    joint: frame_leg11
+    pid: {p: 2, d: 0.01, i: 0.1}
+
+  leg_controller2:
+    type: effort_controllers/JointPositionController
+    joint: frame_leg12
+    pid: {p: 6, d: 0.1, i: 0.1}
+
+  leg_controller3:
+    type: effort_controllers/JointPositionController
+    joint: frame_leg21
+    pid: {p: 6, d: 0.1, i: 0.1}
+
+  leg_controller4:
+    type: effort_controllers/JointPositionController
+    joint: frame_leg22
+    pid: {p: 2, d: 0.01, i: 0.1}
+
+  leg_controller5:
+    type: effort_controllers/JointPositionController
+    joint: frame_leg31
+    pid: {p: 6, d: 0.1, i: 0.1}
+
+  leg_controller6:
+    type: effort_controllers/JointPositionController
+    joint: frame_leg32
+    pid: {p: 2, d: 0.01, i: 0.1}
+
+  leg_controller7:
+    type: effort_controllers/JointPositionController
+    joint: frame_leg41
+    pid: {p: 2, d: 0.01, i: 0.1}
+
+  leg_controller8:
+    type: effort_controllers/JointPositionController
+    joint: frame_leg42
+    pid: {p: 6, d: 0.1, i: 0.1}
+
+  ## Position Controller for Mimic Joints
+  leg_controller1_mimic:
+    type: effort_controllers/JointPositionController
+    joint: leg11_leg13
+    pid: {p: 2, d: 0.01, i: 0.1}
+
+  leg_controller2_mimic:
+    type: effort_controllers/JointPositionController
+    joint: leg12_leg14
+    pid: {p: 6, d: 0.1, i: 0.1}
+
+  leg_controller3_mimic:
+    type: effort_controllers/JointPositionController
+    joint: leg21_leg23
+    pid: {p: 6, d: 0.1, i: 0.1}
+
+  leg_controller4_mimic:
+    type: effort_controllers/JointPositionController
+    joint: leg22_leg24
+    pid: {p: 2, d: 0.01, i: 0.1}
+
+  leg_controller5_mimic:
+    type: effort_controllers/JointPositionController
+    joint: leg31_leg33
+    pid: {p: 6, d: 0.1, i: 0.1}
+
+  leg_controller6_mimic:
+    type: effort_controllers/JointPositionController
+    joint: leg32_leg34
+    pid: {p: 2, d: 0.01, i: 0.1}
+
+  leg_controller7_mimic:
+    type: effort_controllers/JointPositionController
+    joint: leg41_leg43
+    pid: {p: 2, d: 0.01, i: 0.1}
+
+  leg_controller8_mimic:
+    type: effort_controllers/JointPositionController
+    joint: leg42_leg44
+    pid: {p: 6, d: 0.1, i: 0.1}
