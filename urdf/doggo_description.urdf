@@ -4,12 +4,21 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="doggo_description">
+
+    <gazebo reference="base_link">
+		<material>Gazebo/White</material>
+	</gazebo>
+	<gazebo reference="frame">
+		<material>Gazebo/Black</material>
+	</gazebo>
+
   <link
     name="base_link">
     <inertial>
       <origin
         xyz="4.0137E-07 -5.4265E-09 -0.0050974"
         rpy="0 0 0" />
+      <!-- 1.6553 -->
       <mass
         value="1.6553" />
       <inertia
@@ -26,7 +35,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://doggo_description/meshes/base_link.STL" />
+          filename="package://doggo_description/meshes/base_link." />
       </geometry>
       <material
         name="">
@@ -40,7 +49,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://doggo_description/meshes/base_link.STL" />
+          filename="package://doggo_description/meshes/base_link." />
       </geometry>
     </collision>
   </link>
@@ -347,6 +356,16 @@
         <mesh
           filename="package://doggo_description/meshes/shoe1.STL" />
       </geometry>
+      <surface>
+        <friction>
+	      <mu>1000.0</mu>
+	      <mu2>1000.0</mu2>
+	      <kp value="1.0" />
+	      <kd value="10000000.0"/>
+	      <fdir1>1 1 1 </fdir1>
+	      <minDepth>0.005</minDepth>
+        </friction>
+      </surface>
     </collision>
   </link>
   <joint
@@ -506,6 +525,16 @@
         <mesh
           filename="package://doggo_description/meshes/shoe2.STL" />
       </geometry>
+      <surface>
+        <friction>
+	      <mu>1000.0</mu>
+	      <mu2>1000.0</mu2>
+	      <kp value="1.0" />
+	      <kd value="10000000.0"/>
+	      <fdir1>1 1 1 </fdir1>
+	      <minDepth>0.005</minDepth>
+        </friction>
+      </surface>
     </collision>
   </link>
   <joint
@@ -771,6 +800,16 @@
         <mesh
           filename="package://doggo_description/meshes/shoe3.STL" />
       </geometry>
+      <surface>
+        <friction>
+	      <mu>1000.0</mu>
+	      <mu2>1000.0</mu2>
+	      <kp value="1.0" />
+	      <kd value="10000000.0"/>
+	      <fdir1>1 1 1 </fdir1>
+	      <minDepth>0.005</minDepth>
+        </friction>
+      </surface>
     </collision>
   </link>
   <joint
@@ -1142,6 +1181,16 @@
         <mesh
           filename="package://doggo_description/meshes/shoe4.STL" />
       </geometry>
+      <surface>
+        <friction>
+	      <mu>1000.0</mu>
+	      <mu2>1000.0</mu2>
+	      <kp value="1.0" />
+	      <kd value="10000000.0"/>
+	      <fdir1>1 1 1 </fdir1>
+	      <minDepth>0.005</minDepth>
+        </friction>
+      </surface>
     </collision>
   </link>
   <joint
@@ -1157,4 +1206,190 @@
     <axis
       xyz="0 0 0" />
   </joint>
+
+  <transmission name="frame_leg11">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="frame_leg11" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="frame_leg11">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="frame_leg12">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="frame_leg12" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="frame_leg12">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="frame_leg21">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="frame_leg21" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="frame_leg21">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="frame_leg22">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="frame_leg22" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="frame_leg22">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="frame_leg31">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="frame_leg31" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="frame_leg31">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="frame_leg32">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="frame_leg32" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="frame_leg32">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="frame_leg41">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="frame_leg41" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="frame_leg41">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="frame_leg42">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="frame_leg42" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="frame_leg42">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <!-- Mimic Joint Transmission -->
+    <transmission name="leg11_leg13">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg11_leg13" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="leg11_leg13">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="leg12_leg14">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg12_leg14" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="leg12_leg14">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="leg21_leg23">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg21_leg23" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="leg21_leg23">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="leg22_leg24">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg22_leg24" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="leg22_leg24">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="leg31_leg33">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg31_leg33" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="leg31_leg33">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="leg32_leg34">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg32_leg34" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="leg32_leg34">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="leg41_leg43">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg41_leg43" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="leg41_leg43">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <transmission name="leg42_leg44">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg42_leg44" >
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="leg42_leg44">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> 
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <legacyModeNS>true</legacyModeNS>
+      <robotNamespace>/doggo_description</robotNamespace>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin> 
+  </gazebo>
+
 </robot>
