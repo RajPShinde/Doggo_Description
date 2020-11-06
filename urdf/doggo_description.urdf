@@ -5,10 +5,10 @@
 <robot
   name="doggo_description">
 
-    <gazebo reference="base_link">
+  	<gazebo reference="base_link">
 		<material>Gazebo/White</material>
-	</gazebo>
-	<gazebo reference="frame">
+  	</gazebo>
+  	<gazebo reference="frame">
 		<material>Gazebo/Black</material>
 	</gazebo>
 
@@ -18,7 +18,6 @@
       <origin
         xyz="4.0137E-07 -5.4265E-09 -0.0050974"
         rpy="0 0 0" />
-      <!-- 1.6553 -->
       <mass
         value="1.6553" />
       <inertia
@@ -1207,13 +1206,75 @@
       xyz="0 0 0" />
   </joint>
 
+  <link name="footstep1"/>
+  <link name="footstep2"/>
+  <link name="footstep3"/>
+  <link name="footstep4"/>
+
+    <joint
+    name="shoe1_footstep1"
+    type="fixed">
+    <origin
+      xyz="0 -0.19 0"
+      rpy="0 2.13 1.5708" />
+    <parent
+      link="shoe1" />
+    <child
+      link="footstep1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+      <joint
+    name="shoe2_footstep2"
+    type="fixed">
+    <origin
+      xyz="0 -0.19 0"
+      rpy="0 1.011 1.5708" />
+    <parent
+      link="shoe2" />
+    <child
+      link="footstep2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+      <joint
+    name="shoe3_footstep3"
+    type="fixed">
+    <origin
+      xyz="0 -0.19 0"
+      rpy="0 1.011 1.5708" />
+    <parent
+      link="shoe3" />
+    <child
+      link="footstep3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+        <joint
+    name="shoe4_footstep4"
+    type="fixed">
+    <origin
+      xyz="0 -0.19 0"
+      rpy="0 2.13 1.5708" />
+    <parent
+      link="shoe4" />
+    <child
+      link="footstep4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+<!-- Transmission -->
   <transmission name="frame_leg11">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="frame_leg11" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="frame_leg11">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission> 
@@ -1221,10 +1282,10 @@
   <transmission name="frame_leg12">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="frame_leg12" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="frame_leg12">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission> 
@@ -1232,10 +1293,10 @@
   <transmission name="frame_leg21">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="frame_leg21" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="frame_leg21">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission> 
@@ -1243,10 +1304,10 @@
   <transmission name="frame_leg22">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="frame_leg22" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="frame_leg22">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission> 
@@ -1254,10 +1315,10 @@
   <transmission name="frame_leg31">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="frame_leg31" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="frame_leg31">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission> 
@@ -1265,10 +1326,10 @@
   <transmission name="frame_leg32">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="frame_leg32" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="frame_leg32">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission> 
@@ -1276,10 +1337,10 @@
   <transmission name="frame_leg41">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="frame_leg41" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="frame_leg41">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission> 
@@ -1287,109 +1348,146 @@
   <transmission name="frame_leg42">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="frame_leg42" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="frame_leg42">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission> 
 
-  <!-- Mimic Joint Transmission -->
-    <transmission name="leg11_leg13">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="leg11_leg13" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="leg11_leg13">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> 
-
-  <transmission name="leg12_leg14">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="leg12_leg14" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="leg12_leg14">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> 
-
-  <transmission name="leg21_leg23">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="leg21_leg23" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="leg21_leg23">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> 
-
-  <transmission name="leg22_leg24">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="leg22_leg24" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="leg22_leg24">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> 
-
-  <transmission name="leg31_leg33">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="leg31_leg33" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="leg31_leg33">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> 
-
-  <transmission name="leg32_leg34">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="leg32_leg34" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="leg32_leg34">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> 
-
-  <transmission name="leg41_leg43">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="leg41_leg43" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="leg41_leg43">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> 
-
-  <transmission name="leg42_leg44">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="leg42_leg44" >
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="leg42_leg44">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> 
-
+<!-- Controller Plugin -->
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <legacyModeNS>true</legacyModeNS>
       <robotNamespace>/doggo_description</robotNamespace>
       <robotBaseFrame>base_link</robotBaseFrame>
     </plugin> 
+  </gazebo>
+
+<!-- Parallel Links -->
+  <gazebo>
+    <joint name="parallel_link1" type="revolute">
+        <parent>leg14</parent>
+        <child>leg13</child>
+        <pose>0.0 -0.162 0 0 0 0</pose>
+        <axis>
+            <xyz>0 1 0</xyz>
+            <limit>
+                <lower>-1</lower>
+                <upper>1</upper>
+            </limit>
+            <dynamics>
+                <spring_reference>0</spring_reference>
+                <spring_stiffness>0</spring_stiffness>
+            </dynamics>
+            <use_parent_model_frame>1</use_parent_model_frame>
+
+        </axis>
+        <physics>
+            <ode>
+                <implicit_spring_damper>1</implicit_spring_damper>
+                <cfm_damping>1</cfm_damping>
+                <limit>
+                    <cfm>0</cfm>
+                    <erp>0.2</erp>
+                </limit>
+            </ode>
+        </physics>
+    </joint>
+  </gazebo>
+
+  <gazebo>
+    <joint name="parallel_link2" type="revolute">
+        <parent>leg23</parent>
+        <child>leg24</child>
+        <pose>0.0 -0.162 0 0 0 0</pose>
+        <axis>
+            <xyz>0 1 0</xyz>
+            <limit>
+                <lower>-1</lower>
+                <upper>1</upper>
+            </limit>
+            <dynamics>
+                <spring_reference>0</spring_reference>
+                <spring_stiffness>0</spring_stiffness>
+            </dynamics>
+            <use_parent_model_frame>1</use_parent_model_frame>
+
+        </axis>
+        <physics>
+            <ode>
+                <implicit_spring_damper>1</implicit_spring_damper>
+                <cfm_damping>1</cfm_damping>
+                <limit>
+                    <cfm>0</cfm>
+                    <erp>0.2</erp>
+                </limit>
+            </ode>
+        </physics>
+    </joint>
+  </gazebo>
+
+  <gazebo>
+    <joint name="parallel_link3" type="revolute">
+        <parent>leg33</parent>
+        <child>leg34</child>
+        <pose>0.0 -0.162 0 0 0 0</pose>
+        <axis>
+            <xyz>0 1 0</xyz>
+            <limit>
+                <lower>-1</lower>
+                <upper>1</upper>
+            </limit>
+            <dynamics>
+                <spring_reference>0</spring_reference>
+                <spring_stiffness>0</spring_stiffness>
+            </dynamics>
+            <use_parent_model_frame>1</use_parent_model_frame>
+
+        </axis>
+        <physics>
+            <ode>
+                <implicit_spring_damper>1</implicit_spring_damper>
+                <cfm_damping>1</cfm_damping>
+                <limit>
+                    <cfm>0</cfm>
+                    <erp>0.2</erp>
+                </limit>
+            </ode>
+        </physics>
+    </joint>
+  </gazebo>
+
+  <gazebo>
+    <joint name="parallel_link4" type="revolute">
+        <parent>leg44</parent>
+        <child>leg43</child>
+        <pose>0.0 -0.162 0 0 0 0</pose>
+        <axis>
+            <xyz>0 1 0</xyz>
+            <limit>
+                <lower>-1</lower>
+                <upper>1</upper>
+            </limit>
+            <dynamics>
+                <spring_reference>0</spring_reference>
+                <spring_stiffness>0</spring_stiffness>
+            </dynamics>
+            <use_parent_model_frame>1</use_parent_model_frame>
+
+        </axis>
+        <physics>
+            <ode>
+                <implicit_spring_damper>1</implicit_spring_damper>
+                <cfm_damping>1</cfm_damping>
+                <limit>
+                    <cfm>0</cfm>
+                    <erp>0.2</erp>
+                </limit>
+            </ode>
+        </physics>
+    </joint>
   </gazebo>
 
 </robot>
