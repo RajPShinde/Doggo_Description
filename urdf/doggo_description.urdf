@@ -5,10 +5,10 @@
 <robot
   name="doggo_description">
 
-  	<gazebo reference="base_link">
+  <gazebo reference="base_link">
 		<material>Gazebo/White</material>
-  	</gazebo>
-  	<gazebo reference="frame">
+  </gazebo>
+  <gazebo reference="frame">
 		<material>Gazebo/Black</material>
 	</gazebo>
 

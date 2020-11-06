@@ -14,6 +14,6 @@
   	<remap from="/joint_states" to="/doggo_description/joint_states" />
   </node>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find doggo_description)/urdf.rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find doggo_description)/display.rviz" />
 
 </launch>
