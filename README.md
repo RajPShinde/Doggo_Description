@@ -8,5 +8,5 @@ This a a ROS package to visualize Stanford Doggo Quadruped Robot in Gazebo and R
 1. ROS Kinetic and above
 3. gazebo_ros_pkgs
 
-# Maintainer- [*Raj Shinde*](https://rajpshinde.github.io/)
+**Maintainer-** [*Raj Shinde*](https://rajpshinde.github.io/)
 
