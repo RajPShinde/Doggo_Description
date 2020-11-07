@@ -1,10 +1,10 @@
-## Stanford Doggo Description
+# Stanford Doggo Description
 [![License MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/RajPShinde/Doggo_Description/blob/master/LICENSE)
 
-# Overview
+## Overview
 This a a ROS package to visualize Stanford Doggo Quadruped Robot in Gazebo and Rviz
 
-# Dependencies
+## Dependencies
 1. ROS Kinetic and above
 3. gazebo_ros_pkgs
 
