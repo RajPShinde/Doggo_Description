@@ -8,7 +8,7 @@ doggo_description:
   leg_controller1:
     type: effort_controllers/JointPositionController
     joint: frame_leg11
-    pid: {p: 2, d: 0.01, i: 0.1}
+    pid: {p: 6, d: 0.1, i: 0.1}
 
   leg_controller2:
     type: effort_controllers/JointPositionController
@@ -23,7 +23,7 @@ doggo_description:
   leg_controller4:
     type: effort_controllers/JointPositionController
     joint: frame_leg22
-    pid: {p: 2, d: 0.01, i: 0.1}
+    pid: {p: 6, d: 0.1, i: 0.1}
 
   leg_controller5:
     type: effort_controllers/JointPositionController
@@ -33,12 +33,12 @@ doggo_description:
   leg_controller6:
     type: effort_controllers/JointPositionController
     joint: frame_leg32
-    pid: {p: 2, d: 0.01, i: 0.1}
+    pid: {p: 6, d: 0.1, i: 0.1}
 
   leg_controller7:
     type: effort_controllers/JointPositionController
     joint: frame_leg41
-    pid: {p: 2, d: 0.01, i: 0.1}
+    pid: {p: 6, d: 0.1, i: 0.1}
 
   leg_controller8:
     type: effort_controllers/JointPositionController
