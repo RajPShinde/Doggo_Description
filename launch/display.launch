@@ -2,14 +2,15 @@
 <launch>
 
   <arg name="model" />
+  <arg name="gui" default="false" />
   <param name="robot_description" textfile="$(find doggo_description)/urdf/doggo_description.urdf" />
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
-     <!-- <remap from="/joint_states" to="/doggo_description/joint_states" /> -->
+     <remap from="/joint_states" to="/doggo_description/joint_states" />
   </node>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
-  	<!-- <remap from="/joint_states" to="/doggo_description/joint_states" /> -->
+  	<remap from="/joint_states" to="/doggo_description/joint_states" />
   </node>
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find doggo_description)/config/display.rviz" />
