@@ -5,10 +5,10 @@
 <robot
   name="doggo_description">
 
-  <gazebo reference="base_link">
+    <gazebo reference="base_link">
 		<material>Gazebo/White</material>
-  </gazebo>
-  <gazebo reference="frame">
+	</gazebo>
+	<gazebo reference="frame">
 		<material>Gazebo/Black</material>
 	</gazebo>
 
@@ -18,6 +18,7 @@
       <origin
         xyz="4.0137E-07 -5.4265E-09 -0.0050974"
         rpy="0 0 0" />
+      <!-- 1.6553 -->
       <mass
         value="1.6553" />
       <inertia
@@ -1267,7 +1268,6 @@
       xyz="0 0 0" />
   </joint>
 
-<!-- Transmission -->
   <transmission name="frame_leg11">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="frame_leg11" >
@@ -1275,7 +1275,7 @@
     </joint>
     <actuator name="frame_leg11">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>2</mechanicalReduction>
     </actuator>
   </transmission> 
 
@@ -1286,7 +1286,7 @@
     </joint>
     <actuator name="frame_leg12">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>2</mechanicalReduction>
     </actuator>
   </transmission> 
 
@@ -1297,7 +1297,7 @@
     </joint>
     <actuator name="frame_leg21">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>2</mechanicalReduction>
     </actuator>
   </transmission> 
 
@@ -1308,7 +1308,7 @@
     </joint>
     <actuator name="frame_leg22">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>2</mechanicalReduction>
     </actuator>
   </transmission> 
 
@@ -1319,7 +1319,7 @@
     </joint>
     <actuator name="frame_leg31">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>2</mechanicalReduction>
     </actuator>
   </transmission> 
 
@@ -1330,7 +1330,7 @@
     </joint>
     <actuator name="frame_leg32">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>2</mechanicalReduction>
     </actuator>
   </transmission> 
 
@@ -1341,7 +1341,7 @@
     </joint>
     <actuator name="frame_leg41">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>2</mechanicalReduction>
     </actuator>
   </transmission> 
 
@@ -1352,11 +1352,10 @@
     </joint>
     <actuator name="frame_leg42">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
+      <mechanicalReduction>2</mechanicalReduction>
     </actuator>
   </transmission> 
 
-<!-- Controller Plugin -->
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <legacyModeNS>true</legacyModeNS>
@@ -1365,129 +1364,211 @@
     </plugin> 
   </gazebo>
 
-<!-- Parallel Links -->
-  <gazebo>
-    <joint name="parallel_link1" type="revolute">
-        <parent>leg14</parent>
-        <child>leg13</child>
-        <pose>0.0 -0.162 0 0 0 0</pose>
-        <axis>
-            <xyz>0 1 0</xyz>
-            <limit>
-                <lower>-1</lower>
-                <upper>1</upper>
-            </limit>
-            <dynamics>
-                <spring_reference>0</spring_reference>
-                <spring_stiffness>0</spring_stiffness>
-            </dynamics>
-            <use_parent_model_frame>1</use_parent_model_frame>
 
-        </axis>
-        <physics>
-            <ode>
-                <implicit_spring_damper>1</implicit_spring_damper>
-                <cfm_damping>1</cfm_damping>
-                <limit>
-                    <cfm>0</cfm>
-                    <erp>0.2</erp>
-                </limit>
-            </ode>
-        </physics>
-    </joint>
+  <!-- Sensors -->
+<link name="camera_link">
+      <collision>
+      <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+      <geometry>
+        <mesh filename="package://doggo_description/meshes/realsense_d435.STL"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0.0" rpy="1.57 0 1.57"/>
+      <geometry>
+        <mesh filename="package://doggo_description/meshes/realsense_d435.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+
+  <link name="camera_depth_frame"/>
+
+  <joint name="cam_joint1" type="fixed">
+        <parent link="base_link" />
+        <child link="camera_link" />
+        <origin xyz="0.25 0.0 0.1" rpy="0 1 0"/>
+  </joint>
+
+  <joint name="cam_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="camera_depth_frame" />
+        <origin xyz="0.25 0.0 0.1" rpy="0 1 0"/>
+  </joint>
+
+  <gazebo reference="camera_link">  
+      <sensor type="depth" name="camera">
+        <always_on>true</always_on>
+        <update_rate>30.0</update_rate>
+        <camera>
+          <horizontal_fov>1.59174</horizontal_fov>
+          <image>
+            <format>B8G8R8</format>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.2</near>
+            <far>6.0</far>
+          </clip>
+        </camera>
+        <plugin name="kinect_camera_controller" filename="libgazebo_ros_openni_kinect.so">
+          <cameraName>D435</cameraName>
+          <visualize>true</visualize>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>30</updateRate>
+          <imageTopicName>rgb/image_raw</imageTopicName>
+          <depthImageTopicName>depth/image_raw</depthImageTopicName>
+          <pointCloudTopicName>depth/points</pointCloudTopicName>
+          <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+          <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+          <frameName>camera_depth_frame</frameName>
+          <distortion_k1>0.0</distortion_k1>
+          <distortion_k2>0.0</distortion_k2>
+          <distortion_k3>0.0</distortion_k3>
+          <distortion_t1>0.0</distortion_t1>
+          <distortion_t2>0.0</distortion_t2>
+          <pointCloudCutoff>0.02</pointCloudCutoff>
+          <CxPrime>0</CxPrime>
+          <Cx>0</Cx>
+          <Cy>0</Cy>
+          <focalLength>0</focalLength>
+          <hackBaseline>0</hackBaseline>
+        </plugin>
+      </sensor>
   </gazebo>
 
-  <gazebo>
-    <joint name="parallel_link2" type="revolute">
-        <parent>leg23</parent>
-        <child>leg24</child>
-        <pose>0.0 -0.162 0 0 0 0</pose>
-        <axis>
-            <xyz>0 1 0</xyz>
-            <limit>
-                <lower>-1</lower>
-                <upper>1</upper>
-            </limit>
-            <dynamics>
-                <spring_reference>0</spring_reference>
-                <spring_stiffness>0</spring_stiffness>
-            </dynamics>
-            <use_parent_model_frame>1</use_parent_model_frame>
-
-        </axis>
-        <physics>
-            <ode>
-                <implicit_spring_damper>1</implicit_spring_damper>
-                <cfm_damping>1</cfm_damping>
+    <gazebo>
+        <joint name="parallel_link1" type="revolute">
+            <parent>leg14</parent>
+            <child>leg13</child>
+            <pose>0.0 -0.162 0 0 0 0</pose>
+            <axis>
+                <xyz>0 1 0</xyz>
                 <limit>
-                    <cfm>0</cfm>
-                    <erp>0.2</erp>
+                    <lower>-1</lower>
+                    <upper>1</upper>
                 </limit>
-            </ode>
-        </physics>
-    </joint>
-  </gazebo>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+    
+            </axis>
+            <physics>
+                <ode>
+                    <implicit_spring_damper>1</implicit_spring_damper>
+                    <cfm_damping>1</cfm_damping>
+                    <limit>
+                        <cfm>0</cfm>
+                        <erp>0.2</erp>
+                    </limit>
+                </ode>
+            </physics>
+        </joint>
+    </gazebo>
 
-  <gazebo>
-    <joint name="parallel_link3" type="revolute">
-        <parent>leg33</parent>
-        <child>leg34</child>
-        <pose>0.0 -0.162 0 0 0 0</pose>
-        <axis>
-            <xyz>0 1 0</xyz>
-            <limit>
-                <lower>-1</lower>
-                <upper>1</upper>
-            </limit>
-            <dynamics>
-                <spring_reference>0</spring_reference>
-                <spring_stiffness>0</spring_stiffness>
-            </dynamics>
-            <use_parent_model_frame>1</use_parent_model_frame>
-
-        </axis>
-        <physics>
-            <ode>
-                <implicit_spring_damper>1</implicit_spring_damper>
-                <cfm_damping>1</cfm_damping>
+        <gazebo>
+        <joint name="parallel_link2" type="revolute">
+            <parent>leg23</parent>
+            <child>leg24</child>
+            <pose>0.0 -0.162 0 0 0 0</pose>
+            <axis>
+                <xyz>0 1 0</xyz>
                 <limit>
-                    <cfm>0</cfm>
-                    <erp>0.2</erp>
+                    <lower>-1</lower>
+                    <upper>1</upper>
                 </limit>
-            </ode>
-        </physics>
-    </joint>
-  </gazebo>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+    
+            </axis>
+            <physics>
+                <ode>
+                    <implicit_spring_damper>1</implicit_spring_damper>
+                    <cfm_damping>1</cfm_damping>
+                    <limit>
+                        <cfm>0</cfm>
+                        <erp>0.2</erp>
+                    </limit>
+                </ode>
+            </physics>
+        </joint>
+    </gazebo>
 
-  <gazebo>
-    <joint name="parallel_link4" type="revolute">
-        <parent>leg44</parent>
-        <child>leg43</child>
-        <pose>0.0 -0.162 0 0 0 0</pose>
-        <axis>
-            <xyz>0 1 0</xyz>
-            <limit>
-                <lower>-1</lower>
-                <upper>1</upper>
-            </limit>
-            <dynamics>
-                <spring_reference>0</spring_reference>
-                <spring_stiffness>0</spring_stiffness>
-            </dynamics>
-            <use_parent_model_frame>1</use_parent_model_frame>
-
-        </axis>
-        <physics>
-            <ode>
-                <implicit_spring_damper>1</implicit_spring_damper>
-                <cfm_damping>1</cfm_damping>
+        <gazebo>
+        <joint name="parallel_link3" type="revolute">
+            <parent>leg33</parent>
+            <child>leg34</child>
+            <pose>0.0 -0.162 0 0 0 0</pose>
+            <axis>
+                <xyz>0 1 0</xyz>
                 <limit>
-                    <cfm>0</cfm>
-                    <erp>0.2</erp>
+                    <lower>-1</lower>
+                    <upper>1</upper>
                 </limit>
-            </ode>
-        </physics>
-    </joint>
-  </gazebo>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+    
+            </axis>
+            <physics>
+                <ode>
+                    <implicit_spring_damper>1</implicit_spring_damper>
+                    <cfm_damping>1</cfm_damping>
+                    <limit>
+                        <cfm>0</cfm>
+                        <erp>0.2</erp>
+                    </limit>
+                </ode>
+            </physics>
+        </joint>
+    </gazebo>
+
+        <gazebo>
+        <joint name="parallel_link4" type="revolute">
+            <parent>leg44</parent>
+            <child>leg43</child>
+            <pose>0.0 -0.162 0 0 0 0</pose>
+            <axis>
+                <xyz>0 1 0</xyz>
+                <limit>
+                    <lower>-1</lower>
+                    <upper>1</upper>
+                </limit>
+                <dynamics>
+                    <spring_reference>0</spring_reference>
+                    <spring_stiffness>0</spring_stiffness>
+                </dynamics>
+                <use_parent_model_frame>1</use_parent_model_frame>
+    
+            </axis>
+            <physics>
+                <ode>
+                    <implicit_spring_damper>1</implicit_spring_damper>
+                    <cfm_damping>1</cfm_damping>
+                    <limit>
+                        <cfm>0</cfm>
+                        <erp>0.2</erp>
+                    </limit>
+                </ode>
+            </physics>
+        </joint>
+    </gazebo>
 
 </robot>
