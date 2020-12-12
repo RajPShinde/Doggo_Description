@@ -4,9 +4,15 @@
 ## Overview
 This a a ROS package to visualize Stanford Doggo Quadruped Robot in Gazebo and Rviz
 
+## Doggo URDF
+<p align="center">
+<img src="data/doggo.png"/>
+</p>
+
 ## Dependencies
 1. ROS Kinetic and above
-3. gazebo_ros_pkgs
+2. ros-control
+3. gazebo-ros-control
 
 **Maintainer-** [*Raj Shinde*](https://rajpshinde.github.io/)
 
